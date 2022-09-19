@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/vr-creator-academby-collab-unity-project/[Ll]ibrary/
+/vr-creator-academby-collab-unity-project/[Tt]emp/
+/vr-creator-academby-collab-unity-project/[Oo]bj/
+/vr-creator-academby-collab-unity-project/[Bb]uild/
+/vr-creator-academby-collab-unity-project/[Bb]uilds/
+/vr-creator-academby-collab-unity-project/[Ll]ogs/
+/vr-creator-academby-collab-unity-project/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

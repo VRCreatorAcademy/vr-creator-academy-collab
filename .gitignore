@@ -74,3 +74,6 @@ crashlytics-build.properties
 # Intella-J .idea
 .idea
 /Documentation/Contributing/Get started working on and contributing to the VRCreatorAcademy collab project.docx
+
+# Blender Backup files
+*.blend1

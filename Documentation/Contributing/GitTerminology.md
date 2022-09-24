@@ -11,6 +11,10 @@ working on different features at the same time from a common starting point.  On
 can be merged back into the "main" branch (often called the trunk in other scm software)
 ## clone
 The process of copying repository from a remote directory to your local directory.
+## commit
+A snapshot of the project at a given time.
+## commiting
+The process of taking staged files checking them into the repository. (see staging) 
 ## fork
 A fork is a copy of a repository.  The term is reused and has different meanings depending on where it is use.  This
 can cause a bit of confusion.
@@ -40,6 +44,8 @@ is accessible on the internet but it doesn't have to be.  It can be another comp
 directory on your own computer.
 ## source control management (appreciated scm)
 A set of tool that help manage different versions control.  Git is a source control management tool.
+## staging
+An intermediate process of taking files that you have been working and selecting which file well be part of a commit.
 ## upstream
 A repository that is the parent project that owners forks contribute changes back to. 
 ## working directory

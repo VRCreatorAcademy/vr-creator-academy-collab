@@ -70,3 +70,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /vr-creator-academby-collab-unity-project/[Aa]ssets/[Ss]treamingAssets/aa.meta
 /vr-creator-academby-collab-unity-project/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Intella-J .idea
+.idea

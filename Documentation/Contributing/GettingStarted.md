@@ -36,7 +36,7 @@ am in Linux I use gitk, git gui and command line tools.
 
   - ![img.png](img.png)
 
-5.	You will now have your very own for of the repo in your github account. Click on the repo (notice that it is a Public repo which means that the world can see it).
+5.	You will now have your very own fork of the repo in your github account. Click on the repo (notice that it is a Public repo which means that the world can see it).
 
   - ![img_1.png](img_1.png) 
 

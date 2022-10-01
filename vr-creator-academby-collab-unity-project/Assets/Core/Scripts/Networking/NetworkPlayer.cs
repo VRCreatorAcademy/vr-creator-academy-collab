@@ -1,45 +1,35 @@
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class NetworkPlayer : NetworkBehaviour
 {
-    public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
+    public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>(Vector3.zero, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner );
+    public InputAction playerControls;
 
     public override void OnNetworkSpawn()
     {
         if (IsOwner)
         {
-            Move();
+            Debug.Log("OnEnable IsOwner");
+            playerControls.Enable();
         }
-    }
-
-    public void Move()
-    {
-        if (NetworkManager.Singleton.IsServer)
-        {
-            var randomPosition = GetRandomPositionOnPlane();
-            transform.position = randomPosition;
-            Position.Value = randomPosition;
-        }
-        else
-        {
-            SubmitPositionRequestServerRpc();
-        }
-    }
-
-    [ServerRpc]
-    void SubmitPositionRequestServerRpc(ServerRpcParams rpcParams = default)
-    {
-        Position.Value = GetRandomPositionOnPlane();
-    }
-
-    static Vector3 GetRandomPositionOnPlane()
-    {
-        return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
     }
 
     void Update()
     {
-        transform.position = Position.Value;
+        if( IsOwner && IsClient)
+        {
+            Vector3 new_vector = playerControls.ReadValue<Vector3>() / 10.0f;
+            Position.Value += new_vector;
+            Debug.Log("Client " + Position.Value);
+        }
+
+        if (IsServer)
+        {
+            transform.position = Position.Value;
+            Debug.Log("Server " + Position.Value);
+
+        }
     }
 }

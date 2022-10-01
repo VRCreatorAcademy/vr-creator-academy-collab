@@ -4,7 +4,7 @@ using UnityEngine;
 public class NetworkVariableTest : NetworkBehaviour
 {
     private NetworkVariable<float> ServerNetworkVariable = new NetworkVariable<float>();
-    private NetworkVariable<float> ClientNetworkVariable = new NetworkVariable<float>();
+    //private NetworkVariable<float> ClientNetworkVariable = new NetworkVariable<float>();
     private float last_t = 0.0f;
 
     public override void OnNetworkSpawn()

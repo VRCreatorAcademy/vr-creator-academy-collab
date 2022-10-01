@@ -134,6 +134,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position:
     m_InternalValue: {x: 0, y: 0, z: 0}
+  playerControls:
+    m_Name: Player Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2bf86b5c-cc0d-419c-b939-43877942ca21
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 3D Vector
+      m_Id: f999c902-3e00-4348-b185-3c90c9ff7fbb
+      m_Path: 3DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 7cdb5df3-63a7-4d6d-8252-4d7a10f1f917
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 05fdd4ce-aee3-46b1-af9b-dc316ba61196
+      m_Path: <Keyboard>/leftShift
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: left
+      m_Id: c065e66d-4796-4ea6-b8db-bf8e9dabf5b2
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 2069e5cf-84ba-4481-aa25-d9b348c62e48
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: forward
+      m_Id: 6260b7ce-84aa-460e-98b4-bd714cac6301
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: backward
+      m_Id: 27c55baa-f3b8-442c-ae69-960104480f36
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    m_Flags: 0
 --- !u!114 &2330030943143329434
 MonoBehaviour:
   m_ObjectHideFlags: 0

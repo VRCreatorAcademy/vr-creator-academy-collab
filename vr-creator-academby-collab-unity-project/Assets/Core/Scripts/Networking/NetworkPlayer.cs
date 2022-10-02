@@ -20,8 +20,8 @@ public class NetworkPlayer : NetworkBehaviour
     {
         if( IsOwner && IsClient)
         {
-            Vector3 new_vector = playerControls.ReadValue<Vector3>() / 10.0f;
-            Position.Value += new_vector;
+            Vector3 new_vector = playerControls.ReadValue<Vector3>() * 5.0f;
+            Position.Value += new_vector * Time.deltaTime;
             Debug.Log("Client " + Position.Value);
         }
 

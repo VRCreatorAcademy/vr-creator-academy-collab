@@ -7,8 +7,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField] XRController		leftController;
-	[SerializeField] XRController		rightController;
+	[SerializeField] XRRayInteractor	leftRayInteractor;
+	[SerializeField] XRRayInteractor    rightRayInteractor;
 	private Animator					animator;
 
 	List<UnityEngine.XR.InputDevice> leftHandDevices = new List<UnityEngine.XR.InputDevice>();
@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
 	void Start()
 	{
 		animator = GetComponentInChildren<Animator>();
-
 	}
 
 
@@ -64,8 +63,9 @@ public void LeftGrip()
 		{
 			float gripValue;
 			leftHandDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.grip, out gripValue);
-			Debug.Log($"Grip = {gripValue}");
+
 			animator.SetFloat("Left Grip", gripValue);
+			leftRayInteractor.enabled = gripValue > .3;;
 		}
 	}
 
@@ -76,8 +76,9 @@ public void LeftGrip()
 		{
 			float gripValue;
 			rightHandDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.grip, out gripValue);
-			Debug.Log($"Grip = {gripValue}");
+
 			animator.SetFloat("Right Grip", gripValue);
+			rightRayInteractor.enabled = gripValue > .3; ;
 		}
 	}
 }

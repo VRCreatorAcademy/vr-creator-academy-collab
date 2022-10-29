@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 6846861510872642311}
   - component: {fileID: 6459811738891049168}
   m_Layer: 0
-  m_Name: Player Prefab
+  m_Name: Player Netwoked Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

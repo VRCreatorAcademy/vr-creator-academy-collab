@@ -1,6 +1,6 @@
 @ECHO
 ECHO Launching network test.
-start "host" ".\Build\VR Creator Academy Collab.exe" -logfile log-host.txt -mlapi host
+rem start "host" ".\Build\VR Creator Academy Collab.exe" -logfile log-host.txt -mlapi host
 rem timeout /t 2
 
 rem start "server" ".\Build\VR Creator Academy Collab.exe" -logfile log-server.txt -mlapi server 

@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 7555459117803101543}
   - component: {fileID: 5310056995361557916}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player - DoNoUse - PapaJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,18 +1,75 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.XR.Management;
 
 public class NetworkCommandLine : MonoBehaviour
 {
     private NetworkManager netManager;
 
+    public IEnumerator StartXR()
+    {
+        Debug.Log("Initializing XR...");
+        yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
+
+        if (XRGeneralSettings.Instance.Manager.activeLoader == null)
+        {
+            Debug.LogError("Initializing XR Failed. Check Editor or Player log for details.");
+        }
+        else
+        {
+            Debug.Log("Starting XR...");
+            XRGeneralSettings.Instance.Manager.StartSubsystems();
+        }
+    }
+    public void StopXR()
+    {
+        Debug.Log("Stopping XR...");
+
+        XRGeneralSettings.Instance.Manager.StopSubsystems();
+        XRGeneralSettings.Instance.Manager.DeinitializeLoader();
+        Debug.Log("XR stopped completely.");
+    }
+
     void Start()
     {
         netManager = GetComponentInParent<NetworkManager>();
 
-        if (Application.isEditor) return;
+        GameObject camera = GameObject.Find("Camera");
+        if (camera == null) Debug.Log("Could not find: Camera");
+        GameObject xrOrigin = GameObject.Find("XR Origin");
+        if (xrOrigin == null) Debug.Log("Could not find: XR Origin");
 
         var args = GetCommandlineArgs();
+
+        bool supressXR = false;
+        if (args.TryGetValue("-xr", out string xrValue))
+        {
+            switch (xrValue)
+            {
+                case "supress":
+                    supressXR = true;
+                    break;
+            }
+        }
+        if (!supressXR)
+        {
+            // Turn on XR Plug-in
+            Debug.Log("Starting XR");
+            StartCoroutine(StartXR());
+            camera.SetActive(false);
+            xrOrigin.SetActive(true);
+        }
+        else
+        {
+            camera.SetActive(true);
+            xrOrigin.SetActive(false);
+        }
+
+
+        if (Application.isEditor) return;
 
         if (args.TryGetValue("-mlapi", out string mlapiValue))
         {
@@ -25,11 +82,15 @@ public class NetworkCommandLine : MonoBehaviour
                     netManager.StartHost();
                     break;
                 case "client":
-
                     netManager.StartClient();
                     break;
             }
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        StopXR();
     }
 
     private Dictionary<string, string> GetCommandlineArgs()

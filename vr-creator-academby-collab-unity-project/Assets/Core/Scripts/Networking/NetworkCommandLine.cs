@@ -7,6 +7,8 @@ using UnityEngine.XR.Management;
 
 public class NetworkCommandLine : MonoBehaviour
 {
+    [SerializeField] private bool defaultSupressXR = false;
+
     private NetworkManager netManager;
 
     public IEnumerator StartXR()
@@ -44,7 +46,7 @@ public class NetworkCommandLine : MonoBehaviour
 
         var args = GetCommandlineArgs();
 
-        bool supressXR = false;
+        bool supressXR = defaultSupressXR;
         if (args.TryGetValue("-xr", out string xrValue))
         {
             switch (xrValue)

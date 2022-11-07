@@ -12,7 +12,7 @@ public class NetworkVariableTest : NetworkBehaviour
         if (IsServer)
         {
             ServerNetworkVariable.Value = 0.0f;
-            Debug.Log("Server's var initialized to: " + ServerNetworkVariable.Value);
+            //Debug.Log("Server's var initialized to: " + ServerNetworkVariable.Value);
         }
     }
 
@@ -26,7 +26,7 @@ public class NetworkVariableTest : NetworkBehaviour
             {
                 last_t = t_now;
                 // Debug.Log("Server set its var to: " + ServerNetworkVariable.Value + ", has client var at: " + ClientNetworkVariable.Value);
-                Debug.Log("Server set its var to: " + ServerNetworkVariable.Value + ", has client var at: " + "ClientNetworkVariable not defined");
+                //Debug.Log("Server set its var to: " + ServerNetworkVariable.Value + ", has client var at: " + "ClientNetworkVariable not defined");
             }
         }
     }

@@ -34,13 +34,13 @@ public class NetworkPlayer : NetworkBehaviour
             {
                 Position.Value = xr.transform.position;
             }
-            Debug.Log("Client " + Position.Value);
+            //Debug.Log("Client " + Position.Value);
         }
 
         if (IsServer)
         {
             transform.position = Position.Value;
-            Debug.Log("Server " + Position.Value);
+            //Debug.Log("Server " + Position.Value);
         }
     }
 }

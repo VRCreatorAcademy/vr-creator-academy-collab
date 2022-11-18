@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5334046811660504842
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.13840461
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.965589
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.846036
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_Name
+      value: TurkColoredGrillMarks
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210766950449692908, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210766950449692908, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210766950449692908, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1eee5a9b57b752c40b5d97600367f0bf, type: 2}
+    - target: {fileID: 7594256856215747086, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594256856215747086, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594256856215747086, guid: d967bf9d03d0c2d47a35096acd3df31c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2510596ed9a858940b16f11b2599c2ed, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d967bf9d03d0c2d47a35096acd3df31c, type: 3}

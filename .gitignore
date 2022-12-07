@@ -77,3 +77,6 @@ crashlytics-build.properties
 
 # Blender Backup files
 *.blend1
+/vr-creator-academby-collab-unity-project/log-client.txt
+/vr-creator-academby-collab-unity-project/log-host.txt
+/vr-creator-academby-collab-unity-project/log-server.txt

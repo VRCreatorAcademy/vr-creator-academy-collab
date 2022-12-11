@@ -6,11 +6,32 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Core/Scenes/StartMenu.unity
+    guid: adcdedfa710199f48a1e064ec3e5e43e
+  - enabled: 1
     path: Assets/Core/Scenes/PapaJ-CornHole-Netcode.unity
     guid: 0d3700044b6cb7443b97b855f06d5e8d
   - enabled: 1
     path: Assets/Core/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Core/Scenes/PapaJ-CornHole.unity
+    guid: a8b2edac2f9230d4b8b19cad4cedc45d
+  - enabled: 1
+    path: Assets/Core/Scenes/PapaJ-CornHole (Avatar).unity
+    guid: a1f423f64bbc32641b8c2c22f8ecf902
+  - enabled: 1
+    path: Assets/Core/Scenes/Josh_BbqModels.unity
+    guid: 1d3ace0df2479e44790ad9bad3fd8162
+  - enabled: 1
+    path: Assets/Core/Scenes/DC-ShootingGallery.unity
+    guid: 45192e17aac353f49a994acf25fbb529
+  - enabled: 1
+    path: Assets/Core/Scenes/Avatar.unity
+    guid: d172496e5e7c9384c8c7a16dfc398bf9
+  - enabled: 1
+    path: Assets/Core/Scenes/Asaidas-House.unity
+    guid: be17e1e144cdac040b075902aafba9db
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 85d9c0e4714e2c246bea26542b30dd08,
       type: 2}

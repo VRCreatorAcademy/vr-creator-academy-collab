@@ -28,9 +28,17 @@ public class NetworkCommandLine : MonoBehaviour
             XRGeneralSettings.Instance.Manager.StartSubsystems();
         }
     }
+    public void findCameras()
+    {
+        sceneCamera = GameObject.Find("Camera");
+        if (sceneCamera == null) Debug.Log("Could not find: Camera");
+        xrOrigin = GameObject.Find("XR Origin");
+        if (xrOrigin == null) Debug.Log("Could not find: XR Origin");
+    }
     public void StartXR()
     {
         Debug.Log("Starting XR...");
+        findCameras();
         StartCoroutine(StartXRCoroutine());
         sceneCamera.SetActive(false);
         xrOrigin.SetActive(true);
@@ -38,22 +46,25 @@ public class NetworkCommandLine : MonoBehaviour
     }
     public void StopXR()
     {
-        Debug.Log("Stopping XR...");
-        XRGeneralSettings.Instance.Manager.StopSubsystems();
-        XRGeneralSettings.Instance.Manager.DeinitializeLoader();
-        sceneCamera.SetActive(true);
-        xrOrigin.SetActive(false);
-        Debug.Log("XR stopped completely.");
+        if(XRGeneralSettings.Instance.Manager.isInitializationComplete)
+        {
+            Debug.Log("Stopping XR...");
+            findCameras();
+            XRGeneralSettings.Instance.Manager.StopSubsystems();
+            XRGeneralSettings.Instance.Manager.DeinitializeLoader();
+            sceneCamera.SetActive(true);
+            xrOrigin.SetActive(false);
+            Debug.Log("XR stopped completely.");
+        }
+        else
+        {
+            Debug.Log("Cannot stop XR because it was not initialized...");
+        }
     }
 
     void Start()
     {
         netManager = GetComponentInParent<NetworkManager>();
-
-        sceneCamera = GameObject.Find("Camera");
-        if (sceneCamera == null) Debug.Log("Could not find: Camera");
-        xrOrigin = GameObject.Find("XR Origin");
-        if (xrOrigin == null) Debug.Log("Could not find: XR Origin");
 
         var args = GetCommandlineArgs();
 
@@ -70,11 +81,11 @@ public class NetworkCommandLine : MonoBehaviour
         if (!supressXR)
         {
             // Turn on XR Plug-in
-            Debug.Log("Starting XR");
             StartXR();
         }
         else
         {
+            findCameras();
             sceneCamera.SetActive(true);
             xrOrigin.SetActive(false);
         }

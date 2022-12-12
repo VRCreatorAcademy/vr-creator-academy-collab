@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLauncher : NetworkBehaviour
 {
+    [SerializeField] bool LaunchSceneOnStart = false;
+    [SerializeField] string SceneName = "_StartMenu";
+
     public override void OnNetworkSpawn()
     {
         if (IsServer)
@@ -11,6 +14,9 @@ public class SceneLauncher : NetworkBehaviour
             NetworkManager.SceneManager.OnSceneEvent += SceneEventCallback_OnSceneEvent;
         }
         base.OnNetworkSpawn();
+
+        if (LaunchSceneOnStart)
+            ChangeScene(SceneName);
     }
     private void SceneEventCallback_OnSceneEvent(SceneEvent sceneEvent)
     {

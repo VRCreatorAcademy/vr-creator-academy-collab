@@ -1702,7 +1702,7 @@ Transform:
   - {fileID: 832575519}
   - {fileID: 760596294}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &556132127
 GameObject:
@@ -2525,7 +2525,7 @@ Transform:
   - {fileID: 543450652528300906}
   - {fileID: 1644898028}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &735412803
 GameObject:
@@ -2558,7 +2558,7 @@ Transform:
   - {fileID: 407446026}
   - {fileID: 591843628}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &748461294
 PrefabInstance:
@@ -2841,7 +2841,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872050506}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &872050509
 Camera:
   m_ObjectHideFlags: 0
@@ -2898,7 +2898,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &943555211
 PrefabInstance:
@@ -3021,7 +3021,7 @@ Transform:
   m_Children:
   - {fileID: 556132128}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &996160418
 MonoBehaviour:

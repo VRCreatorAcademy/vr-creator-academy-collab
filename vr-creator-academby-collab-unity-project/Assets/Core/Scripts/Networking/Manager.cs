@@ -2,6 +2,7 @@ using Unity.Netcode;
 using Unity.Networking.Transport.Relay;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
@@ -58,8 +59,21 @@ public class Manager : MonoBehaviour
         var mode = NetworkManager.Singleton.IsHost ?
             "Host" : NetworkManager.Singleton.IsServer ? "Server" : "Client";
 
+        if (GUILayout.Button("Menu"))
+        {
+            Debug.Log("Menu");
+            string SceneName = "_StartMenu";
+            var status = NetworkManager.Singleton.SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+            if (status != SceneEventProgressStatus.Started)
+            {
+                Debug.LogWarning($"Failed to load {SceneName} " +
+                        $"with a {nameof(SceneEventProgressStatus)}: {status}");
+            }
+        }
+
         GUILayout.Label("Transport: " +
             NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
         GUILayout.Label("Mode: " + mode);
+
     }
 }

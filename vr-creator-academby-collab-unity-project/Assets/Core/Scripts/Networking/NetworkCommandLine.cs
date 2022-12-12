@@ -8,63 +8,14 @@ using UnityEngine.XR.Management;
 public class NetworkCommandLine : MonoBehaviour
 {
     [SerializeField] private bool defaultSupressXR = false;
-
-    private GameObject sceneCamera;
-    private GameObject xrOrigin;
     private NetworkManager netManager;
-
-    private IEnumerator StartXRCoroutine()
-    {
-        Debug.Log("Initializing XR...");
-        yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
-
-        if (XRGeneralSettings.Instance.Manager.activeLoader == null)
-        {
-            Debug.LogError("Initializing XR Failed. Check Editor or Player log for details.");
-        }
-        else
-        {
-            Debug.Log("Starting XR...");
-            XRGeneralSettings.Instance.Manager.StartSubsystems();
-        }
-    }
-    public void findCameras()
-    {
-        sceneCamera = GameObject.Find("Camera");
-        if (sceneCamera == null) Debug.Log("Could not find: Camera");
-        xrOrigin = GameObject.Find("XR Origin");
-        if (xrOrigin == null) Debug.Log("Could not find: XR Origin");
-    }
-    public void StartXR()
-    {
-        Debug.Log("Starting XR...");
-        findCameras();
-        StartCoroutine(StartXRCoroutine());
-        sceneCamera.SetActive(false);
-        xrOrigin.SetActive(true);
-        Debug.Log("XR started completely.");
-    }
-    public void StopXR()
-    {
-        if(XRGeneralSettings.Instance.Manager.isInitializationComplete)
-        {
-            Debug.Log("Stopping XR...");
-            findCameras();
-            XRGeneralSettings.Instance.Manager.StopSubsystems();
-            XRGeneralSettings.Instance.Manager.DeinitializeLoader();
-            sceneCamera.SetActive(true);
-            xrOrigin.SetActive(false);
-            Debug.Log("XR stopped completely.");
-        }
-        else
-        {
-            Debug.Log("Cannot stop XR because it was not initialized...");
-        }
-    }
+    private XRManager xrManager;
 
     void Start()
     {
         netManager = GetComponentInParent<NetworkManager>();
+        xrManager = GameObject.Find("XR Manager").GetComponent<XRManager>();
+        if (xrManager == null) Debug.Log("Could not find XRManager");
 
         var args = GetCommandlineArgs();
 
@@ -81,13 +32,11 @@ public class NetworkCommandLine : MonoBehaviour
         if (!supressXR)
         {
             // Turn on XR Plug-in
-            StartXR();
+            xrManager.StartXR();
         }
         else
         {
-            findCameras();
-            sceneCamera.SetActive(true);
-            xrOrigin.SetActive(false);
+            xrManager.StopXR();
         }
 
 
@@ -112,7 +61,7 @@ public class NetworkCommandLine : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        StopXR();
+        xrManager.StopXR();
     }
 
     private Dictionary<string, string> GetCommandlineArgs()

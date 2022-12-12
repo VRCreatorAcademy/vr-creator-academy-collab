@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Core/Scenes/StartMenu.unity
+    path: Assets/Core/Scenes/_NetworkBootstrap.unity
+    guid: 8bfc159460e78a14e86ab980dbffd808
+  - enabled: 1
+    path: Assets/Core/Scenes/_StartMenu.unity
     guid: adcdedfa710199f48a1e064ec3e5e43e
   - enabled: 1
     path: Assets/Core/Scenes/PapaJ-CornHole-Netcode.unity

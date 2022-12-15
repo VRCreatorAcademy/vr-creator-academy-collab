@@ -10,8 +10,8 @@ using UnityEngine.XR.Management;
 public class XRManager : MonoBehaviour
 {
 
-    //[SerializeField] private string sceneCameraName = "Camera";
-    //[SerializeField] private string xrOriginName = "XR Origin";
+    [SerializeField] private string sceneCameraName = "Camera";
+    [SerializeField] private string xrOriginName = "XR Origin";
 
     [SerializeField] private GameObject sceneCamera;
     [SerializeField] private GameObject xrOrigin;
@@ -23,6 +23,30 @@ public class XRManager : MonoBehaviour
     }
     public ControlMode controlMode = ControlMode.MouseKeyboard;
 
+    private void Update()
+    {
+        // todo: 3 We should only need to do this once when we changes scenes.
+        if (sceneCamera == null) sceneCamera = GameObject.Find(sceneCameraName);
+        if (xrOrigin == null) xrOrigin = GameObject.Find(xrOriginName);
+
+        switch (controlMode)
+        {
+            case ControlMode.MouseKeyboard:
+                if (findCameras())
+                {
+                    sceneCamera?.SetActive(true);
+                    xrOrigin?.SetActive(false);
+                }
+                break;
+            case ControlMode.XReality:
+                if (findCameras())
+                {
+                    sceneCamera?.SetActive(false);
+                    xrOrigin?.SetActive(true);
+                }
+                break;
+        }
+    }
     private void OnApplicationQuit()
     {
         StopXR();

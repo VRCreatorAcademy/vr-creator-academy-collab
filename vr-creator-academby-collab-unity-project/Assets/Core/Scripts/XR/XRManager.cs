@@ -55,12 +55,14 @@ public class XRManager : MonoBehaviour
     {
         Debug.Log("Initializing XR...");
 
-        if (XRGeneralSettings.Instance == null)
-        {
-            XRGeneralSettings.Instance = ScriptableObject.CreateInstance<XRGeneralSettings>();
-            XRGeneralSettings.Instance.Manager = ScriptableObject.CreateInstance<XRManagerSettings>();
-            Debug.LogWarning("XRManagerSettings created...");
-        }
+        // todo: 5 Probably should remove the following code since its dead and prevents game from building.
+        // Found the following code some where, it seems reasonable but it doesn't build -J. Christ
+        //if (XRGeneralSettings.Instance == null)
+        //{
+        //    XRGeneralSettings.Instance = ScriptableObject.CreateInstance<XRGeneralSettings>();
+        //    XRGeneralSettings.Instance.Manager = ScriptableObject.CreateInstance<XRManagerSettings>();
+        //    Debug.LogWarning("XRManagerSettings created...");
+        //}
 
         yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
 

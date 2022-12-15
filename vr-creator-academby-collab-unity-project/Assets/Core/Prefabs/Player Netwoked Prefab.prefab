@@ -248,9 +248,7 @@ GameObject:
   - component: {fileID: 6888619056931233253}
   - component: {fileID: 4898607943494957438}
   - component: {fileID: 2867190248128105637}
-  - component: {fileID: 5768386546594568010}
   - component: {fileID: 6846861510872642311}
-  - component: {fileID: 6459811738891049168}
   m_Layer: 0
   m_Name: Player Netwoked Prefab
   m_TagString: Untagged
@@ -370,18 +368,6 @@ MonoBehaviour:
       m_Action: Player Controls
       m_Flags: 8
     m_Flags: 0
---- !u!114 &5768386546594568010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6888619056931233250}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f61cb1116e5d55c4495e13dfeb5e6977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6846861510872642311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,18 +394,6 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
---- !u!114 &6459811738891049168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6888619056931233250}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b87ea9db6af8c149ab61b1bec011a1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8771853971402962779
 GameObject:
   m_ObjectHideFlags: 0

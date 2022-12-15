@@ -13,7 +13,10 @@ public class NetworkCommandLine : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("NetworkCommandLine Start()");
+
         netManager = GetComponentInParent<NetworkManager>();
+        if (netManager == null) Debug.Log("Could not find NetworkManager");
         xrManager = GameObject.Find("XR Manager").GetComponent<XRManager>();
         if (xrManager == null) Debug.Log("Could not find XRManager");
 
@@ -31,14 +34,12 @@ public class NetworkCommandLine : MonoBehaviour
         }
         if (!supressXR)
         {
-            // Turn on XR Plug-in
-            xrManager.StartXR();
+            xrManager.StartXR(); // Turn on XR Plug-in
         }
         else
         {
             xrManager.StopXR();
         }
-
 
         if (Application.isEditor) return;
 
@@ -61,6 +62,7 @@ public class NetworkCommandLine : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        Debug.Log("OnApplicationQuit()");
         xrManager.StopXR();
     }
 

@@ -20,7 +20,8 @@ public class SceneLauncher : NetworkBehaviour
     }
     private void SceneEventCallback_OnSceneEvent(SceneEvent sceneEvent)
     {
-        Debug.Log(sceneEvent.ToString());
+        string message = sceneEvent.SceneName + " " + sceneEvent.ClientId.ToString() + " " + sceneEvent.SceneEventType.ToString();
+        Debug.Log(message);
     }
     public void ChangeScene(string SceneName)
     {
@@ -29,7 +30,7 @@ public class SceneLauncher : NetworkBehaviour
         // is started.This same rule is true for all Netcode systems that reside within
         // the NetworkManager.
 
-        //if (IsServer && !string.IsNullOrEmpty(SceneName))
+        if (IsServer && !string.IsNullOrEmpty(SceneName))
         {
             var status = NetworkManager.Singleton.SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
             if (status != SceneEventProgressStatus.Started)

@@ -10,7 +10,7 @@ using UnityEngine.XR.Management;
 public class XRManager : MonoBehaviour
 {
 
-    [SerializeField] private string sceneCameraName = "Camera";
+    [SerializeField] private string sceneCameraName = "PC Camera";
     [SerializeField] private string xrOriginName = "XR Origin";
 
     [SerializeField] private GameObject sceneCamera;

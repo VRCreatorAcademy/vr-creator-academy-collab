@@ -1536,7 +1536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cfc3956541ebd45b9d682ee2465623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneCameraName: Camera
+  sceneCameraName: PC Camera
   xrOriginName: XR Origin
   sceneCamera: {fileID: 0}
   xrOrigin: {fileID: 0}
@@ -2380,7 +2380,7 @@ GameObject:
   - component: {fileID: 2098617129}
   - component: {fileID: 2098617132}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: PC Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

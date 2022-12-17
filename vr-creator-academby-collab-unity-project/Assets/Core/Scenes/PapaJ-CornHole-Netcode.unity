@@ -1396,7 +1396,7 @@ Transform:
   - {fileID: 832575519}
   - {fileID: 760596294}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &526895541
 PrefabInstance:
@@ -2227,7 +2227,7 @@ Transform:
   - {fileID: 407446026}
   - {fileID: 591843628}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &760596290
 GameObject:
@@ -2409,7 +2409,6 @@ MonoBehaviour:
   m_ProtocolType: 0
   m_MaxPacketQueueSize: 128
   m_MaxPayloadSize: 6144
-  m_MaxSendQueueSize: 98304
   m_HeartbeatTimeoutMS: 500
   m_ConnectTimeoutMS: 1000
   m_MaxConnectAttempts: 60
@@ -2493,7 +2492,7 @@ GameObject:
   - component: {fileID: 948746486}
   - component: {fileID: 948746485}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: PC Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2596,7 +2595,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &996160416
 GameObject:
@@ -2629,7 +2628,7 @@ Transform:
   m_Children:
   - {fileID: 556132128}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &996160418
 MonoBehaviour:

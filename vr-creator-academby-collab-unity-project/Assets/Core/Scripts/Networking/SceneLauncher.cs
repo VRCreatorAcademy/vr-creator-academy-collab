@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLauncher : NetworkBehaviour
 {
-    [SerializeField] bool LaunchSceneOnStart = false;
-    [SerializeField] string SceneName = "_StartMenu";
+    [SerializeField] public bool LaunchSceneOnStart = false;
+    [SerializeField] public string SceneName = "_StartMenu";
 
     public override void OnNetworkSpawn()
     {

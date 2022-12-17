@@ -43,9 +43,17 @@ public class Manager : MonoBehaviour
 
         if (utp) utp.ConnectionData.Address = ip_address;
 
+        if (GUILayout.Button("Host->LoadStartMenu"))
+        {
+            GameObject go = GameObject.Find("LoadStartMenu");
+            SceneLauncher sl = go.GetComponent<SceneLauncher>();
+            sl.LaunchSceneOnStart = true;
+
+            NetworkManager.Singleton.StartHost();
+        }
         if (GUILayout.Button("Host")) NetworkManager.Singleton.StartHost();
         if (GUILayout.Button("Client")) NetworkManager.Singleton.StartClient();
-        if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
+        //if (GUILayout.Button("Server")) NetworkManager.Singleton.StartServer();
 
         //if (GUILayout.Button("Test"))
         //{
@@ -61,7 +69,6 @@ public class Manager : MonoBehaviour
 
         if (GUILayout.Button("Menu"))
         {
-            Debug.Log("Menu");
             string SceneName = "_StartMenu";
             var status = NetworkManager.Singleton.SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
             if (status != SceneEventProgressStatus.Started)
